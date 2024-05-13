@@ -18,9 +18,11 @@ import java.io.ObjectOutputStream;
 public class ManageObject {
     public static void main(String[] args) {
         ManageObject manage = new ManageObject();
+        ManageObjectInput manageObjectInput = new ManageObjectInput();
         String fullPath = "KH" + "test" + "KH.obj";
-        khDTO khDTO = new khDTO("JEONG", 20, "Incheon");
-        manage.saveObject(fullPath, khDTO);
+//        khDTO khDTO = new khDTO("JEONG", 20, "Incheon");
+//        manage.saveObject(fullPath, khDTO);
+        manageObjectInput.loadObject(fullPath);
     }
 
     public void saveObject(String fullPath, khDTO dto) {
