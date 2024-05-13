@@ -16,6 +16,8 @@ import java.io.Serializable;
  */
 
 public class khDTO implements Serializable {
+    static final long serialVersionUID =1L;
+    private String bloodTypess = "A";
     private String name;
     private int age;
     private String address;
@@ -28,7 +30,8 @@ public class khDTO implements Serializable {
     @Override
     public String toString() {
         return "khDTO{" +
-                "name='" + name + '\'' +
+                "bloodTypess='" + bloodTypess + '\'' +
+                ", name='" + name + '\'' +
                 ", age=" + age +
                 ", address='" + address + '\'' +
                 '}';
