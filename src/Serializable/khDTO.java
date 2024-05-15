@@ -17,7 +17,7 @@ import java.io.Serializable;
 
 public class khDTO implements Serializable {
     static final long serialVersionUID =1L;
-    private String bloodTypess = "A";
+    private String bloodTypess = "B";
     private String name;
     private int age;
     private String address;
