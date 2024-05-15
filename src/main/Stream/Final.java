@@ -64,5 +64,7 @@ public class Final {
         List<String> list5 = Arrays.asList("apple", "abanana", "cherry", "date", "eggfruit");
         long count = list5.parallelStream().filter(s -> s.startsWith("a")).count();
         System.out.println(count);
+
+
     }
 }
