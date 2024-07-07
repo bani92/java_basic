@@ -35,6 +35,40 @@ public class Problem33 {
         int[] index = {0};
         return strings.stream().filter(word -> word.length() == lengths.get(index[0]++)).toList();
     }
+
+    /**
+     * 주어진 정수 리스트에서 5 이상 10 이하의 숫자를 제외하고 나머지 숫자들의 합을 계산합니다.
+     *
+     * @param numbers 정수 리스트
+     * @return 5 이상 10 이하를 제외한 숫자들의 합
+     */
+    public static int sumExcludingRange(List<Integer> numbers) {
+        // 여기에 코드 작성
+        return numbers.stream().filter(num -> num < 5 || num > 10).mapToInt(Integer::intValue).sum();
+    }
+
+    /**
+     * 주어진 문자열 리스트에서 길이가 4 이상인 문자열만을 선택하여,
+     * 이들을 연결한 새로운 문자열을 생성합니다.
+     *
+     * @param strings 문자열 리스트
+     * @return 선택된 문자열들을 연결한 새로운 문자열
+     */
+    public static String concatenateStringsOverLengthThree(List<String> strings) {
+        // 여기에 코드 작성
+        return strings.stream().filter(word -> word.length() >= 4).collect(Collectors.joining());
+    }
+
+    /**
+     * 주어진 정수 리스트에서 각 숫자의 출현 빈도를 계산하여 Map으로 반환합니다.
+     *
+     * @param numbers 정수 리스트
+     * @return 각 숫자의 출현 빈도를 나타내는 Map
+     */
+    public static Map<Integer, Long> frequencyOfNumbers(List<Integer> numbers) {
+        // 여기에 코드 작성
+        return numbers.stream().collect(Collectors.groupingBy(num -> num, Collectors.counting()));
+    }
 }
 
 
