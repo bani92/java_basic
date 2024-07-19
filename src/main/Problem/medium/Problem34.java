@@ -1,6 +1,7 @@
 package Problem.medium;
 
 import java.util.Collections;
+import java.util.Comparator;
 import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
@@ -64,6 +65,45 @@ public class Problem34 {
                 .orElse(Collections.emptyList());
 
     }
+
+    /**
+     * 주어진 직원(Employee) 리스트에서 'IT' 부서에 속하고,
+     * 나이가 30 이상인 직원들의 이름을 알파벳 순으로 정렬하여 반환합니다.
+     *
+     * @param employees 직원 리스트
+     * @return 조건을 만족하는 직원들의 이름 리스트
+     */
+    public static List<String> getNamesOfITDepartmentEmployeesOver30(List<Employee> employees) {
+        // 여기에 코드 작성
+        return employees.stream().filter(emp -> emp.getDepartment().equals("IT")).filter(age -> age.getAge() >= 30).sorted(Comparator.comparing((Employee::getName)))
+                .map(Employee::getName).collect(Collectors.toList());
+    }
+
+    /**
+     * 주어진 제품(Product) 리스트에서 가격이 20달러 이하인 제품들의 이름을 반환합니다.
+     *
+     * @param products 제품 리스트
+     * @return 가격이 20달러 이하인 제품들의 이름 리스트
+     */
+    public static List<String> getProductNamesUnder20Dollars(List<Product> products) {
+        // 여기에 코드 작성
+
+        return products.stream().filter(pro -> pro.getPrice() <= 20).map(Product::getName).collect(Collectors.toList());
+    }
+
+    /**
+     * 주어진 제품(Product) 리스트에서 가장 높은 가격을 가진 제품의 이름을 반환합니다.
+     * 리스트가 비어있다면 빈 문자열을 반환합니다.
+     *
+     * @param products 제품 리스트
+     * @return 최대 가격을 가진 제품의 이름, 빈 리스트인 경우 빈 문자열
+     */
+    public static String getMostExpensiveProductName(List<Product> products) {
+        // 여기에 코드 작성
+
+        return products.stream().max(Comparator.comparing(Product::getPrice)).map(Product::getName).orElse("");
+    }
+
 }
 
 
